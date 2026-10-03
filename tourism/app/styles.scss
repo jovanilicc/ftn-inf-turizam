@@ -7,72 +7,72 @@ $description-text: #555;
 $box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: $background-color;
-    color: $text-color;
-    padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: $background-color;
+  color: $text-color;
+  padding: 20px;
 }
 
 .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primary-color;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: $box-shadow;
+
+  .title {
+    color: $secondary-color;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 20px;
+  }
+
+  .nav-links {
+    list-style: none;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: $primary-color;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: $box-shadow;
+    gap: 20px;
 
-    .title {
-        color: $secondary-color;
-        font-size: 24px;
-        font-weight: bold;
-        margin-left: 20px;
+    li {
+      margin: 0;
     }
 
-    .nav-links {
-        list-style: none;
-        display: flex;
-        gap: 20px;
+    a {
+      text-decoration: none;
+      color: $secondary-color;
+      font-size: 18px;
+      transition: color 0.3s ease;
 
-        li {
-            margin: 0;
-        }
-
-        a {
-            text-decoration: none;
-            color: $secondary-color;
-            font-size: 18px;
-            transition: color 0.3s ease;
-
-            &:hover {
-                color: $accent-color;
-            }
-        }
+      &:hover {
+        color: $accent-color;
+      }
     }
+  }
 }
 
 .site-description {
-    margin-top: 40px;
-    text-align: center;
+  margin-top: 40px;
+  text-align: center;
 
-    h2 {
-        font-size: 32px;
-        color: $text-color;
-    }
+  h2 {
+    font-size: 32px;
+    color: $text-color;
+  }
 
-    p {
-        font-size: 18px;
-        color: $description-text;
-        margin-top: 10px;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-        line-height: 1.6;
-    }
+  p {
+    font-size: 18px;
+    color: $description-text;
+    margin-top: 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
 }

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../dist/ture/ture.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <h1 class="title">TourApp</h1>
+      <ul class="nav-links">
+        <li><a href="contact.html">Kontakt</a></li>
+        <li><a href="../ture/ture.html">Ture</a></li>
+        <li><a href="#">Restorani</a></li>
+      </ul>
+    </nav>
+    <section>
+      <div class="tours">
+        <table>
+          <thead>
+            <tr>
+              <th>Naziv</th>
+              <th>Kuhinja</th>
+            </tr>
+          </thead>
+          <tbody class="tours-data"></tbody>
+        </table>
+        <div>
+          <div class="details"></div>
+        </div>
+      </div>
+      <div>
+        <form action="#" method="get">
+          <div>
+            <label for="naziv">Naziv:</label>
+            <input type="text" name="naziv" id="naziv" />
+          </div>
+          <div>
+            <label for="opis">Opis:</label>
+            <input type="text" name="opis" id="opis" />
+          </div>
+          <div>
+            <label for="duzina">Duzina (km):</label>
+            <input type="text" name="duzina" id="duzina" />
+          </div>
+          <div>
+            <label for="tagovi">Tagovi:</label>
+            <input type="text" name="tagovi" id="tagovi" />
+          </div>
+          <div class="tags"></div>
+          <div class="btn">
+            <button type="button" class="addBtn">+</button>
+            <button>Dodaj</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <script src="./ture.js"></script>
+  </body>
+</html>

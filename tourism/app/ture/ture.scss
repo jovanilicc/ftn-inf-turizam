@@ -1,0 +1,81 @@
+@use "../styles.scss";
+// $primary-color: #333;
+// $secondary-color: #fff;
+// $accent-color: #4c9ab4;
+// $background-color: #f4f4f9;
+// $text-color: #333;
+// $description-text: #555;
+// $box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+section {
+  padding-top: 2rem;
+  display: flex;
+  gap: 3rem;
+  .tours {
+    flex-basis: 50%;
+  }
+
+  table {
+    width: 100%;
+    border: 1px solid styles.$primary-color;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    text-align: center;
+    thead {
+      background-color: styles.$background-color;
+    }
+    th {
+      padding: 1rem;
+
+      border: 1px solid styles.$primary-color;
+    }
+    td {
+      font-weight: bold;
+      background-color: styles.$secondary-color;
+      border: 1px solid styles.$primary-color;
+      padding: 1rem;
+      cursor: pointer;
+    }
+  }
+
+  form {
+    border: 1px solid styles.$primary-color;
+    padding: 1rem;
+    background-color: styles.$secondary-color;
+    font-weight: bold;
+    div {
+      padding-bottom: 1rem;
+      display: flex;
+
+      input {
+        flex-grow: 1;
+        border: none;
+        border-bottom: 1px solid;
+      }
+    }
+    .btn {
+      padding-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      button {
+        padding: 4px 8px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.details {
+  margin-top: 2rem;
+  display: none;
+  max-width: 80%;
+  border: 1px solid styles.$primary-color;
+  padding: 1rem;
+  font-weight: bold;
+
+  .opis {
+    padding: 0.5rem 0;
+  }
+  .tagovi {
+    padding-top: 0.5rem;
+  }
+}
