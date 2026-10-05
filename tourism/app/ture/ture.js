@@ -38,7 +38,7 @@ const prikaziDetalje = (tura) => {
 
 const createRows = (ture) => {
   let tabela = document.querySelector(".tours-data");
-
+  tabela.innerHTML = "";
   for (let i = 0; i < ture.length; i++) {
     let tr = document.createElement("tr");
 
@@ -57,6 +57,64 @@ const createRows = (ture) => {
 
     tabela.appendChild(tr);
   }
+};
+
+const dodajTag = () => {
+  let addBtn = document.querySelector(".addBtn");
+
+  addBtn.addEventListener("click", () => {
+    let tags = document.querySelector("#tagovi");
+    let tag = document.createElement("div");
+    tag.classList.add("tags");
+
+    let tagText = document.createElement("p");
+
+    let removeBtn = document.createElement("button");
+    removeBtn.textContent = "X";
+    removeBtn.classList.add("removeBtn");
+
+    let tagInput = document.querySelector("input[name='tag']");
+    tagText.textContent = tagInput.value;
+
+    tag.appendChild(tagText);
+    tag.appendChild(removeBtn);
+
+    removeBtn.addEventListener("click", () => {
+      tags.removeChild(tag);
+    });
+
+    tags.appendChild(tag);
+    tagInput.value = "";
+  });
+};
+
+const dodajTuru = () => {
+  let submitBtn = document.querySelector("#novaTura");
+  dodajTag();
+
+  submitBtn.addEventListener("click", (e) => {
+    let forma = document.querySelector("form");
+    if (forma.checkValidity()) {
+      e.preventDefault();
+
+      const formData = new FormData(forma);
+      let naziv = formData.get("naziv");
+      let opis = formData.get("opis");
+      let duzina = formData.get("duzina");
+
+      let tagsParent = document.querySelector("#tagovi");
+      let tags = document.querySelectorAll(".tags");
+      let tagovi = [...tags].map((tag) => {
+        return tag.textContent.substring(0, tag.textContent.length - 1);
+      });
+
+      ture.push(new Tura(naziv, opis, duzina, tagovi));
+      saveToStorage(ture);
+      createRows(ture);
+      forma.reset();
+      tagsParent.innerHTML = "";
+    }
+  });
 };
 const initializeTable = () => {
   ture = JSON.parse(localStorage.getItem("ture"));
@@ -84,6 +142,7 @@ const initializeTable = () => {
   }
   saveToStorage(ture);
   createRows(ture);
+  dodajTuru();
 };
 
 document.addEventListener("DOMContentLoaded", initializeTable);

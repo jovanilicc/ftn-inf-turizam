@@ -115,6 +115,21 @@ section form .btn button {
   padding: 4px 8px;
   cursor: pointer;
 }
+section form #tagovi {
+  display: block;
+}
+section form .tags {
+  display: flex;
+  align-items: center;
+}
+section form .tags p {
+  flex-basis: 40%;
+}
+section form .removeBtn {
+  padding: 4px 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
 .details {
   margin-top: 2rem;
